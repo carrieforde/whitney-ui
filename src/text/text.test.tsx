@@ -5,7 +5,7 @@ const defaultProps = {
   children: "The quick brown fox jumped over the lazy dog.",
 };
 
-function renderText(args: Partial<TextProps>) {
+function renderText(args?: Omit<TextProps, "children" | "ref">) {
   const props = { ...defaultProps, ...args };
   render(<Text {...props} />);
 }

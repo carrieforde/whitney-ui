@@ -1,0 +1,59 @@
+import { ArgTypes, Canvas, Meta, Controls } from "@storybook/addon-docs";
+import * as BannerStories from "./banner.stories";
+
+import Banner from "./banner";
+
+<Meta of={BannerStories} />
+
+# Banner
+
+Use the controls below to customize the `Banner`.
+
+<Canvas of={BannerStories.Playground} />
+
+## Props
+
+<Controls of={BannerStories.Playground} />
+
+## API
+
+<ArgTypes of={BannerStories} />
+
+## Style API
+
+Use [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to customize the appearance of `Banner` to suit your theme. Defaults are shown in the code below.
+
+```css
+:root {
+  /* Base Banner styles */
+  --banner-bg-color: var(
+    --banner-default-background-color,
+    var(--color-default-light)
+  );
+  --banner-border-radius: var(--border-radius);
+  --banner-color: var(--banner-default-color, var(--color-default-main));
+  --banner-margin-bottom: 32px;
+  --banner-margin-top: 32px;
+  --banner-padding: 16px 24px;
+
+  /* Icon */
+  --banner-icon-line-height: 1.4;
+  --banner-icon-font-size: inherit;
+
+  /* Error variant */
+  --banner-error-background-color: var(--color-error-light);
+  --banner-error-color: var(--color-error-main);
+
+  /* Info variant */
+  --banner-info-background-color: var(--color-info-light);
+  --banner-info-color: var(--color-info-main);
+
+  /* Success variant */
+  --banner-success-background-color: var(--color-success-light);
+  --banner-success-color: var(--color-success-main);
+
+  /* Warning variant */
+  --banner-warning-background-color: var(--color-warning-light);
+  --banner-warning-color: var(--color-warning-main);
+}
+```

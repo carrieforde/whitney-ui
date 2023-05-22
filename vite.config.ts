@@ -38,7 +38,7 @@ export default defineConfig({
     setupFiles: "./src/setupTests.ts",
     coverage: {
       reporter: ["text", "html"],
-      exclude: ["node_modules/", "src/setupTests.ts"],
+      exclude: ["src/setupTests.ts", "src/**/*.test.tsx"],
     },
   },
 });

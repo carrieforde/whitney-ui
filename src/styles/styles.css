@@ -108,10 +108,10 @@
   --color-success-dark: var(--color-success-900);
 
   /* Theme settings */
-  --base-font-size: 18px;
+  --base-font-size: 16px;
   --base-font-weight: 400;
   --base-spacing: 8px;
-  --base-line-height: 1.75;
+  --base-line-height: 1.5;
 
   --border-radius: 4px;
 
@@ -139,8 +139,8 @@
 }
 
 @media (width >= 600px) {
-  html {
-    font-size: 18px;
+  :root {
+    --base-font-size: 18px;
   }
 }
 
@@ -148,6 +148,6 @@ body {
   background-color: var(--body-bg-color);
   color: var(--text-color);
   font-family: var(--font-family-body);
-  line-height: 1.75;
+  line-height: var(--base-line-height);
   word-wrap: break-word;
 }

@@ -8,7 +8,10 @@ const COLOR_NAMES = [
   "error",
   "warning",
   "success",
-];
+] as const;
+
+// @see https://steveholgado.com/typescript-types-from-arrays/
+type ColorName = (typeof COLOR_NAMES)[number];
 
 const COLOR_VALUES = [
   "main",
@@ -33,9 +36,7 @@ function getCssPropertyValue(value: string) {
   return documentStyles.getPropertyValue(value).trim();
 }
 
-const ColorSection: React.FC<{ name: typeof COLOR_NAMES }> = ({
-  name = "default",
-}) => {
+const ColorSection: React.FC<{ name: ColorName }> = ({ name = "default" }) => {
   const config: [string, string][] = COLOR_VALUES.reduce((acc, curr) => {
     const colorString = `--color-${name}-${curr}`;
     const colorValue = getCssPropertyValue(colorString);

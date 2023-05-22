@@ -13,30 +13,30 @@ type TextVariant =
 
 type TComponent<T extends HTMLParagraphElement = HTMLParagraphElement> = T;
 
-export type TextProps = {
+export type TextProps = React.PropsWithChildren<{
   component?: TextComponent;
   variant?: TextVariant;
   className?: string;
-} & React.HTMLProps<TComponent>;
+}> &
+  React.HTMLProps<TComponent>;
 
-export const Text = React.forwardRef<
-  TComponent,
-  React.PropsWithChildren<TextProps>
->(({ children, className, component, variant = "body1", ...props }, ref) => {
-  const Comp = variant === "title" && !component ? "h1" : component ?? "p";
-  const textClasses = cn(
-    s.text,
-    [s[variant]],
-    "text",
-    variant && `text--${variant}`,
-    className
-  );
+export const Text = React.forwardRef<TComponent, TextProps>(
+  ({ children, className, component, variant = "body1", ...props }, ref) => {
+    const Comp = variant === "title" && !component ? "h1" : component ?? "p";
+    const textClasses = cn(
+      s.text,
+      [s[variant]],
+      "text",
+      variant && `text--${variant}`,
+      className
+    );
 
-  return (
-    <Comp {...props} className={textClasses} ref={ref}>
-      {children}
-    </Comp>
-  );
-});
+    return (
+      <Comp {...props} className={textClasses} ref={ref}>
+        {children}
+      </Comp>
+    );
+  }
+);
 
 Text.displayName = "Text";
