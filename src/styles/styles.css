@@ -109,7 +109,9 @@
 
   /* Theme settings */
   --base-font-size: 18px;
+  --base-font-weight: 400;
   --base-spacing: 8px;
+  --base-line-height: 1.75;
 
   --border-radius: 4px;
 
@@ -121,29 +123,13 @@
 
   --body-bg-color: #fff;
   --text-color: var(--dark-text-color);
-
-  --heading-color: var(--color-default-dark);
-
-  --link: var(--color-primary-main);
-  --link-bg-color: var(--color-primary-light);
-  --link-code: var(--color-primary-main);
-
-  --blockquote-accent: var(--color-primary-light);
 }
 
 /* Dark Mode theme settings */
 @media (prefers-color-scheme: dark) {
   :root {
-    --body-bg-color: var(--color-default-900);
+    --body-bg-color: var(--color-default-800);
     --text-color: var(--color-default-light);
-
-    --heading-color: var(--color-default-light);
-
-    --link: var(--color-primary-200);
-    --link-bg-color: var(--color-primary-600);
-    --link-code: var(--color-primary-200);
-
-    --blockquote-accent: var(--color-primary-600);
   }
 }
 

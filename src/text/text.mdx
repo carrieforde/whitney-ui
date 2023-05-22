@@ -1,0 +1,107 @@
+import { Meta, Controls, Canvas } from "@storybook/blocks";
+import * as TextStories from "./text.stories";
+
+<Meta of={TextStories} />
+
+# Text
+
+Use the controls below to set props for the `Text` component. Copy the code to render the component in your UI.
+
+<Canvas of={TextStories.Playground} />
+
+## Props
+
+<Controls of={TextStories.Playground} />
+
+## Usage notes
+
+The `title` variant defaults to using an `h1` tag. To use a differnet tag, simply pass in your desired text component.
+
+<Canvas of={TextStories.Title} />
+
+## Style API
+
+Use [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to customize the appearance of buttons to suit your theme. Defaults are shown in the code below.
+
+```css
+:root {
+  /* Title variant */
+  --title-color: var(--color-default-500, #616e7c);
+  --title-font-family: var(--font-family-body, "Inter", sans-serif);
+  --title-font-size: 36px;
+  --title-font-weight: 300;
+  --title-line-height: 1.1;
+  --title-margin-bottom: 0;
+  --title-margin-top: 0;
+
+  /* Subtitle variant */
+  --subtitle-color: var(--text-color, #35469c);
+  --subtitle-font-family: var(--font-family-body, "Inter", sans-serif);
+  --subtitle-font-size: 36px;
+  --subtitle-font-weight: 600;
+  --subtitle-line-height: 1.4;
+  --subtitle-margin-bottom: 0;
+  --subtitle-margin-top: 0;
+
+  /* Body1 variant */
+  --body1-color: var(--text-color, #35469c);
+  --body1-font-family: var(--font-family-body, "Inter", sans-serif);
+  --body1-font-size: var(--base-font-size, 18px);
+  --body1-font-weight: var(--base-font-weight, 400);
+  --body1-line-height: 1.4;
+  --body1-margin-bottom: 0;
+  --body1-margin-top: 0;
+
+  /* Body2 variant */
+  --body2-color: var(--text-color, #35469c);
+  --body2-font-family: var(--font-family-body, "Inter", sans-serif);
+  --body2-font-size: 14px;
+  --body2-font-weight: 500;
+  --body2-line-height: 1.2;
+  --body2-margin-bottom: 4px;
+  --body2-margin-top: 0;
+
+  /* Overline variant */
+  --overline-color: var(--text-color, #35469c);
+  --overline-font-family: var(--font-family-body, "Inter", sans-serif);
+  --overline-font-size: 12px;
+  --overline-font-weight: 300;
+  --overline-line-height: 1.4;
+  --overline-margin-bottom: 4px;
+  --overline-margin-top: 0;
+  --overline-text-transform: uppercase;
+
+  /* Fine Print variant */
+  --fine-print-color: var(--text-color, #35469c);
+  --fine-print-font-family: var(--font-family-body, "Inter", sans-serif);
+  --fine-print-font-size: 12px;
+  --fine-print-font-weight: 300;
+  --fine-print-line-height: 1.4;
+  --fine-print-margin-bottom: 0;
+  --fine-print-margin-top: 0;
+  --fine-print-text-transform: uppercase;
+}
+```
+
+### Custom Styling Example
+
+<Canvas of={TextStories.Styled} />
+
+### Media Queries & Dark Mode
+
+Using CSS Properties isy helpful when working with media queries, including dark mode.
+
+```css
+@media screen and (width >= 600px) {
+  .text {
+    --title-font-size: 60px;
+    --subtitle-font-size: 20px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .text {
+    --title-color: var(--color-default-200);
+  }
+}
+```

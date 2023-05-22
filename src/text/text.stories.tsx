@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Text } from "./text";
+import { CSSProperties } from "react";
 
 const meta: Meta<typeof Text> = {
   title: "Text",
@@ -11,40 +12,85 @@ export default meta;
 type Story = StoryObj<typeof Text>;
 
 export const Body1: Story = {
-  render: (props) => (
-    <Text {...props}>The quick brown fox jumped over the lazy dog.</Text>
-  ),
+  args: {
+    variant: "body1",
+    children: "The quick brown fox jumped over the lazy dog.",
+  },
 };
 
 export const Body2: Story = {
-  ...Body1,
   args: {
+    ...Body1.args,
     variant: "body2",
   },
 };
 
 export const Title: Story = {
-  ...Body1,
   args: {
+    ...Body1.args,
     variant: "title",
   },
 };
 
 export const Subtitle: Story = {
-  ...Body1,
   args: {
+    ...Body1.args,
     variant: "subtitle",
   },
 };
 
 export const Overline: Story = {
-  ...Body1,
   args: {
+    ...Body1.args,
     variant: "overline",
+  },
+};
+
+export const Styled: Story = {
+  render: (args) => (
+    <Text
+      {...args}
+      style={
+        {
+          "--body1-font-family": '"Times New Roman", serif',
+          "--body1-color": "rebeccapurple",
+          "--body1-font-size": "20px",
+          "--body1-line-height": 1.2,
+        } as CSSProperties
+      }
+    />
+  ),
+  args: {
+    ...Body1.args,
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `
+<style>
+  :root {
+    --body1-color: rebeccapurple,
+    --body1-font-family: "Times New Roman", serif,
+    --body1-font-size: 20px,
+    --body1-line-height: 1.2,
+  }
+</style>
+<Text variant="body1">
+  The quick brown fox jumped over the lazy dog.
+</Text>
+        `,
+      },
+    },
   },
 };
 
 export const Playground: Story = {
   ...Body1,
-  args: {},
+  parameters: {
+    docs: {
+      canvas: {
+        sourceState: "shown",
+      },
+    },
+  },
 };

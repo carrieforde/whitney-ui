@@ -24,7 +24,13 @@ export const Text = React.forwardRef<
   React.PropsWithChildren<TextProps>
 >(({ children, className, component, variant = "body1", ...props }, ref) => {
   const Comp = variant === "title" && !component ? "h1" : component ?? "p";
-  const textClasses = cn("text", s.text, [s[variant]], className);
+  const textClasses = cn(
+    s.text,
+    [s[variant]],
+    "text",
+    variant && `text--${variant}`,
+    className
+  );
 
   return (
     <Comp {...props} className={textClasses} ref={ref}>
