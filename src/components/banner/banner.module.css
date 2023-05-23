@@ -9,8 +9,11 @@
   --banner-margin-top: 32px;
   --banner-padding: 16px 24px;
 
+  --banner-icon-color: var(--banner-color);
+  --banner-icon-width: inherit;
   --banner-icon-line-height: 1.4;
-  --banner-icon-font-size: inherit;
+
+  --icon-fill: var(--banner-icon-color);
 
   align-items: baseline;
   background-color: var(--banner-bg-color);
@@ -25,7 +28,13 @@
 
 .icon {
   --body1-line-height: var(--banner-icon-line-height);
-  --body1-font-size: var(--banner-icon-font-size);
+  --body1-font-size: var(--banner-icon-width);
+
+  --icon-width: var(--banner-icon-width);
+  --icon-fill: var(--banner-icon-color);
+
+  align-items: center;
+  display: flex;
 }
 
 .error {

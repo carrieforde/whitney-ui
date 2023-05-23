@@ -1,4 +1,5 @@
-import { BannerIconConfig } from "banner/banner";
+import { BannerIconConfig } from "components/banner/banner";
+import { CircleCheck, CircleExclamation, CircleInfo } from "../icons";
 import { CircleNotch } from "../icons/circle-notch";
 
 export type Theme = {
@@ -17,10 +18,10 @@ export const theme: Theme = {
     banner: {
       icons: {
         default: null,
-        info: "ℹ️",
-        error: "🛑",
-        warning: "⚠️",
-        success: "✅",
+        info: <CircleInfo />,
+        error: <CircleExclamation />,
+        warning: <CircleExclamation />,
+        success: <CircleCheck />,
       },
     },
     spinner: {

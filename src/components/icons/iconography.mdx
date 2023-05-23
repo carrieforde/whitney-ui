@@ -1,5 +1,10 @@
 import { Meta, IconGallery, IconItem } from "@storybook/blocks";
 import { CircleNotch } from "./circle-notch";
+import { CircleXMark } from "./circle-x-mark";
+import { CircleInfo } from "./circle-info";
+import { CircleCheck } from "./circle-check";
+import { CircleQuestion } from "./circle-question";
+import { CircleExclamation } from "./circle-exclamation";
 import { Heart } from "./heart";
 
 <Meta title="Tokens/Icons" />
@@ -7,8 +12,23 @@ import { Heart } from "./heart";
 # Icons
 
 <IconGallery>
+  <IconItem name="circle-check">
+    <CircleCheck />
+  </IconItem>
+  <IconItem name="circle-exclamation">
+    <CircleExclamation />
+  </IconItem>
+  <IconItem name="circle-info">
+    <CircleInfo />
+  </IconItem>
   <IconItem name="circle-notch">
     <CircleNotch />
+  </IconItem>
+  <IconItem name="circle-question">
+    <CircleQuestion />
+  </IconItem>
+  <IconItem name="circle-x-mark">
+    <CircleXMark />
   </IconItem>
   <IconItem name="heart">
     <Heart />

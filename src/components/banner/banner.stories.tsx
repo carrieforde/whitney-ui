@@ -83,6 +83,7 @@ export const ThemeIcons: Story = {
   },
   args: {
     ...Primary.args,
+    variant: "info",
     children: "This is a banner",
   },
   parameters: {

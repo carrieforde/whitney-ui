@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import s from "../styles/utilities.module.css";
+import s from "../../styles/utilities.module.css";
 import { Button } from "./button";
 import { Heart } from "../icons/heart";
 import { Text } from "../text/text";
