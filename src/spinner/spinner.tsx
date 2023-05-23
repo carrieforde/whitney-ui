@@ -6,22 +6,31 @@ import s from "./spinner.module.css";
 
 type SpinnerSize = "small" | "medium" | "large";
 
-type SpinnerProps = {
+export type SpinnerProps = {
   color?: "default" | "primary" | "secondary";
   size?: SpinnerSize;
 };
 
-export const Spinner: React.FC<SpinnerProps> = ({ size, color }) => {
+export const Spinner: React.FC<SpinnerProps> = ({
+  size,
+  color = "default",
+}) => {
   const { components } = useTheme();
 
   const spinnerClasses = cn(
     s.spinner,
     size && [s[size]],
     color && [s[color]],
-    "spinner"
+    "spinner",
+    `spinner--${color}`,
+    `spinner--${size}`
   );
 
-  return <span className={spinnerClasses}>{components.spinner.icon}</span>;
+  return (
+    <span className={spinnerClasses} title="Loading">
+      {components.spinner.icon}
+    </span>
+  );
 };
 
 export default Spinner;

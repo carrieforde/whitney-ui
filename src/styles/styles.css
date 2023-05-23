@@ -42,7 +42,7 @@
   --color-secondary-700: #c52707;
   --color-secondary-800: #ad1d07;
   --color-secondary-900: #841003;
-  --color-secondary-main: var(--color-secondary-600);
+  --color-secondary-main: var(--color-secondary-700);
   --color-secondary-contrast: var(--light-text-color, #fff);
   --color-secondary-light: var(--color-secondary-50);
   --color-secondary-dark: var(--color-secondary-900);
