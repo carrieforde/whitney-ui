@@ -61,12 +61,17 @@ export const ThemeIcons: Story = {
   render: (args) => {
     const theme: Theme = {
       ...defaultTheme,
-      bannerIcons: {
-        default: "😑",
-        info: "🤔",
-        error: "😵",
-        warning: "😵‍💫",
-        success: "😇",
+      components: {
+        ...defaultTheme.components,
+        banner: {
+          icons: {
+            default: null,
+            info: "ℹ️",
+            error: "🛑",
+            warning: "⚠️",
+            success: "✅",
+          },
+        },
       },
     };
 
@@ -81,7 +86,7 @@ export const ThemeIcons: Story = {
     children: "This is a banner",
   },
   parameters: {
-    doc: {
+    docs: {
       canvas: { sourceState: "shown" },
     },
   },
@@ -94,7 +99,7 @@ export const Playground: Story = {
     children: "This is a banner",
   },
   parameters: {
-    doc: {
+    docs: {
       canvas: { sourceState: "shown" },
     },
   },

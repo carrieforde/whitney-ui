@@ -28,7 +28,7 @@ const Icon: React.FC<React.PropsWithChildren<BannerIconProps>> = ({
   className,
   variant = "default",
 }) => {
-  const { bannerIcons } = useTheme();
+  const { components } = useTheme();
   const iconClasses = cn(s.icon, "banner__icon", className);
   const textProps: Pick<TextProps, "component" | "className"> = {
     component: "span",
@@ -39,7 +39,7 @@ const Icon: React.FC<React.PropsWithChildren<BannerIconProps>> = ({
     return <Text {...textProps}>{children}</Text>;
   }
 
-  return <Text {...textProps}>{bannerIcons[variant]}</Text>;
+  return <Text {...textProps}>{components.banner.icons[variant]}</Text>;
 };
 
 export const Banner: React.FC<BannerProps> = ({

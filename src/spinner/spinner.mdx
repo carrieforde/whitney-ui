@@ -1,0 +1,43 @@
+import { Canvas, Meta, Controls } from "@storybook/addon-docs";
+import * as SpinnerStories from "./spinner.stories";
+
+<Meta of={SpinnerStories} />
+
+# Spinner
+
+Use the controls below to customize the `Spinner`.
+
+<Canvas of={SpinnerStories.Playground} />
+
+## Props
+
+<Controls of={SpinnerStories.Playground} />
+
+## Usage Notes
+
+The default icons for each `variant` can be set at the theme-level using the `ThemeProvider`.
+
+<Canvas of={SpinnerStories.ThemeSpinner} />
+
+<Controls of={SpinnerStories.ThemeSpinner} />
+
+## Style API
+
+Use [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to customize the appearance of `Spinner` to suit your theme. Defaults are shown in the code below.
+
+```css
+:root {
+  /* Base Spinner styles */
+  --spinner-width: var(--base-font-size, 18px);
+  --spinner-color: var(--color-default-main, #323f4b);
+
+  /* Sizes */
+  --spinner-small-width: var(--base-font-size, 18px);
+  --spinner-medium-width: var(--base-font-size, 24px);
+  --spinner-large-width: var(--base-font-size, 36px);
+
+  /* Colors */
+  --spinner-primary-color: var(--color-primary-main, #35469c);
+  --spinner-secondary-color: var(--color-secondary-main, #de3a11);
+}
+```

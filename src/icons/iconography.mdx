@@ -1,0 +1,24 @@
+import { Meta, IconGallery, IconItem } from "@storybook/blocks";
+import { CircleNotch } from "./circle-notch";
+
+<Meta title="Tokens/Icons" />
+
+# Icons
+
+<IconGallery>
+  <IconItem name="circle-notch">
+    <CircleNotch />
+  </IconItem>
+</IconGallery>
+
+## Style API
+
+Use [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to customize the appearance of icons to suit your theme. Defaults are shown in the code below.
+
+```css
+:root {
+  --icon-color: var(--color-default-main, #323f4b);
+  --icon-stroke: transparent;
+  --icon-width: var(--base-font-size, 18px);
+}
+```
