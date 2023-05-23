@@ -1,7 +1,10 @@
+"use client";
+
 import cn from "classnames";
 
 import * as React from "react";
 
+import { useTheme } from "../theme-provider/theme-provider";
 import { Text, TextProps } from "../text/text";
 import s from "./banner.module.css";
 
@@ -18,11 +21,14 @@ type BannerIconProps = React.PropsWithChildren<
   Pick<BannerProps, "variant"> & { className?: string }
 >;
 
+export type BannerIconConfig = Record<BannerVariant, React.ReactNode>;
+
 const Icon: React.FC<React.PropsWithChildren<BannerIconProps>> = ({
   children,
   className,
-  variant,
+  variant = "default",
 }) => {
+  const { bannerIcons } = useTheme();
   const iconClasses = cn(s.icon, "banner__icon", className);
   const textProps: Pick<TextProps, "component" | "className"> = {
     component: "span",
@@ -33,23 +39,7 @@ const Icon: React.FC<React.PropsWithChildren<BannerIconProps>> = ({
     return <Text {...textProps}>{children}</Text>;
   }
 
-  if (variant === "error") {
-    return <Text {...textProps}>🛑</Text>;
-  }
-
-  if (variant === "info") {
-    return <Text {...textProps}>ℹ️</Text>;
-  }
-
-  if (variant === "success") {
-    return <Text {...textProps}>✅</Text>;
-  }
-
-  if (variant === "warning") {
-    return <Text {...textProps}>⚠️</Text>;
-  }
-
-  return null;
+  return <Text {...textProps}>{bannerIcons[variant]}</Text>;
 };
 
 export const Banner: React.FC<BannerProps> = ({

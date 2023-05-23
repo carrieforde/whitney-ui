@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Text } from "./text";
-import { CSSProperties } from "react";
+import * as React from "react";
 
 const meta: Meta<typeof Text> = {
   title: "Text",
@@ -56,7 +56,7 @@ export const Styled: Story = {
           "--body1-color": "rebeccapurple",
           "--body1-font-size": "20px",
           "--body1-line-height": 1.2,
-        } as CSSProperties
+        } as React.CSSProperties
       }
     />
   ),

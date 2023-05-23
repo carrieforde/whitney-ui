@@ -27,9 +27,8 @@
     "test:watch": "vitest watch",
     "coverage": "vitest run --coverage"
   },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "dependencies": {
+    "classnames": "^2.3.2"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.1",
@@ -52,7 +51,6 @@
     "@vitejs/plugin-react-swc": "^3.0.0",
     "@vitest/coverage-c8": "^0.31.1",
     "c8": "^7.13.0",
-    "classnames": "^2.3.2",
     "eslint": "^8.38.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
@@ -79,5 +77,9 @@
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
     "vitest": "^0.31.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

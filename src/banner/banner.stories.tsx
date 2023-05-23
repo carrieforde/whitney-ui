@@ -1,4 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { Theme, theme as defaultTheme } from "../theme-provider/theme";
+import { ThemeProvider } from "../theme-provider/theme-provider";
 import { Banner } from "./banner";
 
 const meta: Meta<typeof Banner> = {
@@ -55,10 +57,45 @@ export const CustomIcon: Story = {
   },
 };
 
+export const ThemeIcons: Story = {
+  render: (args) => {
+    const theme: Theme = {
+      ...defaultTheme,
+      bannerIcons: {
+        default: "😑",
+        info: "🤔",
+        error: "😵",
+        warning: "😵‍💫",
+        success: "😇",
+      },
+    };
+
+    return (
+      <ThemeProvider theme={theme}>
+        <Banner {...args} />
+      </ThemeProvider>
+    );
+  },
+  args: {
+    ...Primary.args,
+    children: "This is a banner",
+  },
+  parameters: {
+    doc: {
+      canvas: { sourceState: "shown" },
+    },
+  },
+};
+
 export const Playground: Story = {
   args: {
     variant: "default",
     icon: "",
     children: "This is a banner",
+  },
+  parameters: {
+    doc: {
+      canvas: { sourceState: "shown" },
+    },
   },
 };
