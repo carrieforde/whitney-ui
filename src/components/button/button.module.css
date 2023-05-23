@@ -14,8 +14,7 @@
   --button-min-width: 100px;
   --button-padding: 8px 12px;
 
-  --spinner-color: var(--button-main);
-  --spinner-width: var(--button-font-size);
+  --button-spinner-color: var(--button-main);
 
   align-items: center;
   appearance: none;
@@ -51,6 +50,7 @@
   );
   --button-hover: var(--button-primary-hover, var(--color-primary-600));
   --button-disabled: var(--button-primary-disabled, var(--color-primary-300));
+  --spinner-color: var(--button-main);
 }
 
 .secondary {
@@ -84,7 +84,7 @@
 }
 
 .filled {
-  --spinner-color: var(--button-contrast);
+  --button-spinner-color: var(--button-contrast);
 
   background-color: var(--button-main);
   color: var(--button-contrast);
@@ -105,7 +105,7 @@
 }
 
 .outline:hover {
-  --spinner-color: var(--button-contrast);
+  --button-spinner-color: var(--button-contrast);
 
   background-color: var(--button-main);
   color: var(--button-contrast);
@@ -130,6 +130,11 @@
 
 .icon:hover {
   --icon-fill: var(--button-hover);
+}
+
+.spinner {
+  --spinner-color: var(--button-spinner-color);
+  --spinner-width: var(--button-font-size);
 }
 
 @media (prefers-color-scheme: dark) {

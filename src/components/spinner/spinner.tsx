@@ -9,11 +9,13 @@ type SpinnerSize = "small" | "medium" | "large";
 export type SpinnerProps = {
   color?: "default" | "primary" | "secondary";
   size?: SpinnerSize;
+  className?: string;
 };
 
 export const Spinner: React.FC<SpinnerProps> = ({
   size,
   color = "default",
+  className,
 }) => {
   const { components } = useTheme();
 
@@ -23,7 +25,8 @@ export const Spinner: React.FC<SpinnerProps> = ({
     color && [s[color]],
     "spinner",
     `spinner--${color}`,
-    `spinner--${size}`
+    `spinner--${size}`,
+    className
   );
 
   return (

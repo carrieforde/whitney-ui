@@ -15,6 +15,7 @@ export type ButtonProps = {
   loading?: boolean;
   disabled?: boolean;
   className?: string;
+  spinnerClassName?: string;
 } & React.HTMLProps<HTMLButtonElement>;
 
 export const Button = React.forwardRef<
@@ -30,6 +31,7 @@ export const Button = React.forwardRef<
       variant = "text",
       loading,
       disabled,
+      spinnerClassName,
       ...props
     },
     ref
@@ -43,6 +45,7 @@ export const Button = React.forwardRef<
       `button--${variant}`,
       className
     );
+    const buttonSpinnerClasses = cn(s.spinner, "button__spinner");
 
     return (
       <button
@@ -52,7 +55,7 @@ export const Button = React.forwardRef<
         className={buttonClasses}
         disabled={disabled}
       >
-        {loading ? <Spinner /> : children}
+        {loading ? <Spinner className={buttonSpinnerClasses} /> : children}
       </button>
     );
   }
