@@ -19,8 +19,8 @@
   background-color: var(--banner-bg-color);
   border-radius: var(--banner-border-radius);
   color: var(--banner-color);
+  column-gap: 12px;
   display: flex;
-  gap: 12px;
   margin-bottom: var(--banner-margin-bottom);
   margin-top: var(--banner-margin-top);
   padding: var(--banner-padding);

@@ -1,5 +1,9 @@
 import type { Preview } from "@storybook/react";
 import "../src/styles/styles.css";
+import { AlertProvider } from "../src/components";
+import * as React from "react";
+
+const withAlertProvider = (Story) => <AlertProvider>{Story()}</AlertProvider>;
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +15,7 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [withAlertProvider],
 };
 
 export default preview;

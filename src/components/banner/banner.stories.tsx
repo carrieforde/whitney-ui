@@ -57,7 +57,7 @@ export const CustomIcon: Story = {
   },
 };
 
-export const ThemeIcons: Story = {
+export const ThemeCustomizations: Story = {
   render: (args) => {
     const theme: Theme = {
       ...defaultTheme,

@@ -45,7 +45,11 @@ export const Button = React.forwardRef<
       `button--${variant}`,
       className
     );
-    const buttonSpinnerClasses = cn(s.spinner, "button__spinner");
+    const buttonSpinnerClasses = cn(
+      s.spinner,
+      "button__spinner",
+      spinnerClassName
+    );
 
     return (
       <button
