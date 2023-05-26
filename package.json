@@ -1,7 +1,11 @@
 {
-  "name": "whitney-ui",
+  "name": "@carrieforde/whitney-ui",
   "private": true,
-  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carrieforde/whitney-ui.git"
+  },
+  "version": "0.0.1",
   "exports": {
     ".": {
       "import": "./dist/main.es.js",
