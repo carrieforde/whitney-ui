@@ -1,5 +1,7 @@
 .chevronToggle {
   display: inline-block;
+
+  --icon-width: 0.8em;
 }
 
 .chevronToggle svg {

@@ -1,0 +1,30 @@
+.accordion {
+  --accordion-border: 1px solid var(--color-default-100);
+
+  border: var(--accordion-border);
+}
+
+.accordionHeading {
+  padding: 0 16px;
+}
+
+.accordionHeading:not(:first-of-type) {
+  border-top: var(--accordion-border);
+}
+
+.accordionToggle {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 16px 0;
+  width: 100%;
+}
+
+.accordionPanel {
+  padding: 0 16px;
+}
+
+.open {
+  margin-bottom: 16px;
+}
