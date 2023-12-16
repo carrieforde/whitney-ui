@@ -5,3 +5,7 @@ export * from "./circle-info";
 export * from "./circle-exclamation";
 export * from "./circle-check";
 export * from "./circle-question";
+export * from "./chevron-up";
+export * from "./chevron-down";
+export * from "./chevron-left";
+export * from "./chevron-right";
