@@ -1,0 +1,126 @@
+/* Core settings. */
+:root {
+  /* Color palettes */
+
+  --color-default-50: #f0f4f8;
+  --color-default-100: #d9e2ec;
+  --color-default-200: #bcccdc;
+  --color-default-300: #9fb3c8;
+  --color-default-400: #829ab1;
+  --color-default-500: #627d98;
+  --color-default-600: #486581;
+  --color-default-700: #334e68;
+  --color-default-800: #243b53;
+  --color-default-900: #102a43;
+  --color-default-main: var(--color-default-700);
+  --color-default-contrast: var(--light-text-color, #fff);
+  --color-default-light: var(--color-default-50);
+  --color-default-dark: var(--color-default-800);
+
+  --color-primary-50: #e6e6ff;
+  --color-primary-100: #c4c6ff;
+  --color-primary-200: #a2a5fc;
+  --color-primary-300: #8888fc;
+  --color-primary-400: #7069fa;
+  --color-primary-500: #5d55fa;
+  --color-primary-600: #4d3df7;
+  --color-primary-700: #3525e6;
+  --color-primary-800: #1d0ebe;
+  --color-primary-900: #0c008c;
+  --color-primary-main: var(--color-primary-700);
+  --color-primary-contrast: var(--light-text-color, #fff);
+  --color-primary-light: var(--color-primary-50);
+  --color-primary-dark: var(--color-primary-800);
+
+  --color-secondary-50: #effcf6;
+  --color-secondary-100: #c6f7e2;
+  --color-secondary-200: #8eedc7;
+  --color-secondary-300: #65d6ad;
+  --color-secondary-400: #3ebd93;
+  --color-secondary-500: #27ab83;
+  --color-secondary-600: #199473;
+  --color-secondary-700: #147d64;
+  --color-secondary-800: #0c6b58;
+  --color-secondary-900: #014d40;
+  --color-secondary-main: var(--color-secondary-500);
+  --color-secondary-contrast: var(--light-text-color, #fff);
+  --color-secondary-light: var(--color-secondary-50);
+  --color-secondary-dark: var(--color-secondary-900);
+
+  --color-info-50: #e3f8ff;
+  --color-info-100: #b3ecff;
+  --color-info-200: #81defd;
+  --color-info-300: #5ed0fa;
+  --color-info-400: #40c3f7;
+  --color-info-500: #2bb0ed;
+  --color-info-600: #1992d4;
+  --color-info-700: #127fbf;
+  --color-info-800: #0b69a3;
+  --color-info-900: #035388;
+  --color-info-main: var(--color-info-600);
+  --color-info-contrast: var(--light-text-color, #fff);
+  --color-info-light: var(--color-info-50);
+  --color-info-dark: var(--color-info-900);
+
+  --color-error-50: #ffe3e3;
+  --color-error-100: #ffbdbd;
+  --color-error-200: #ff9b9b;
+  --color-error-300: #f86a6a;
+  --color-error-400: #ef4e4e;
+  --color-error-500: #e12d39;
+  --color-error-600: #cf1124;
+  --color-error-700: #ab091e;
+  --color-error-800: #8a041a;
+  --color-error-900: #610316;
+  --color-error-main: var(--color-error-700);
+  --color-error-contrast: var(--light-text-color);
+  --color-error-light: var(--color-error-50);
+  --color-error-dark: var(--color-error-900);
+
+  --color-warning-50: #fffbea;
+  --color-warning-100: #fff3c4;
+  --color-warning-200: #fce588;
+  --color-warning-300: #fadb5f;
+  --color-warning-400: #f7c948;
+  --color-warning-500: #f0b429;
+  --color-warning-600: #de911d;
+  --color-warning-700: #cb6e17;
+  --color-warning-800: #b44d12;
+  --color-warning-900: #8d2b0b;
+  --color-warning-main: var(--color-warning-400);
+  --color-warning-contrast: var(--dark-text-color, --color-default-main);
+  --color-warning-light: var(--color-warning-50);
+  --color-warning-dark: var(--color-warning-900);
+
+  --color-success-50: #e3f9e5;
+  --color-success-100: #c1f2c7;
+  --color-success-200: #91e697;
+  --color-success-300: #51ca58;
+  --color-success-400: #31b237;
+  --color-success-500: #18981d;
+  --color-success-600: #0f8613;
+  --color-success-700: #0e7817;
+  --color-success-800: #07600e;
+  --color-success-900: #014807;
+  --color-success-main: var(--color-success-500);
+  --color-success-contrast: var(--light-text-color, #fff);
+  --color-success-light: var(--color-success-50);
+  --color-success-dark: var(--color-success-900);
+
+  /* Theme settings */
+  --base-font-size: 16px;
+  --base-font-weight: 400;
+  --base-spacing: 8px;
+  --base-line-height: 1.5;
+
+  --border-radius: 4px;
+
+  --font-family-body: var(--font-family-libre-franklin, system-ui);
+  --font-family-monospace: var(--font-family-ibm-plex-mono, monospace);
+
+  --dark-text-color: var(--color-default-main);
+  --light-text-color: #fff;
+
+  --body-bg-color: #fff;
+  --text-color: var(--dark-text-color);
+}
