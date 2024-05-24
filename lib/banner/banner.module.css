@@ -1,0 +1,70 @@
+.banner {
+  --banner-bg-color: var(
+    --banner-default-background-color,
+    var(--color-default-light)
+  );
+  --banner-border-radius: var(--border-radius);
+  --banner-color: var(--banner-default-color, var(--color-default-main));
+  --banner-margin-bottom: 32px;
+  --banner-margin-top: 32px;
+  --banner-padding: 16px 24px;
+
+  --banner-icon-color: var(--banner-color);
+  --banner-icon-width: inherit;
+  --banner-icon-line-height: 1.4;
+
+  --icon-fill: var(--banner-icon-color);
+
+  align-items: baseline;
+  background-color: var(--banner-bg-color);
+  border-radius: var(--banner-border-radius);
+  color: var(--banner-color);
+  column-gap: 12px;
+  display: flex;
+  margin-bottom: var(--banner-margin-bottom);
+  margin-top: var(--banner-margin-top);
+  padding: var(--banner-padding);
+}
+
+.icon {
+  --body1-line-height: var(--banner-icon-line-height);
+  --body1-font-size: var(--banner-icon-width);
+
+  --icon-width: var(--banner-icon-width);
+  --icon-fill: var(--banner-icon-color);
+
+  align-items: center;
+  display: flex;
+}
+
+.error {
+  --banner-bg-color: var(
+    --banner-error-background-color,
+    var(--color-error-light)
+  );
+  --banner-color: var(--banner-error-color, var(--color-error-main));
+}
+
+.info {
+  --banner-bg-color: var(
+    --banner-info-background-color,
+    var(--color-info-light)
+  );
+  --banner-color: var(--banner-info-color, var(--color-info-dark));
+}
+
+.success {
+  --banner-bg-color: var(
+    --banner-success-background-color,
+    var(--color-success-light)
+  );
+  --banner-color: var(--banner-success-color, var(--color-success-dark));
+}
+
+.warning {
+  --banner-bg-color: var(
+    --banner-warning-background-color,
+    var(--color-warning-light)
+  );
+  --banner-color: var(--banner-warning-color, var(--color-warning-dark));
+}
