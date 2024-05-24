@@ -9,6 +9,11 @@ import { fileURLToPath } from "url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": "/lib",
+    },
+  },
   test: {
     environment: "jsdom",
     setupFiles: ["lib/test-setup.ts"],
