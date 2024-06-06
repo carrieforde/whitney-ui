@@ -10,16 +10,36 @@ module.exports = {
     "plugin:storybook/recommended",
     "prettier",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  ignorePatterns: [
+    "dist",
+    "node_modules",
+    "coverage",
+    "storybook-static",
+    ".eslintrc.cjs",
+    "src",
+  ],
   parser: "@typescript-eslint/parser",
   plugins: ["react", "react-refresh", "jsx-a11y", "import"],
   rules: {
+    "@typescript-eslint/no-explicit-any": "off",
+
+    "no-shadow": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        patterns: [
+          {
+            group: ["../*", "./*"],
+            message: "Please use absolute imports instead.",
+          },
+        ],
+      },
+    ],
+
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
     ],
-    "no-shadow": "off",
-    "@typescript-eslint/no-explicit-any": "off",
     "react/jsx-filename-extension": "off",
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": "off",
@@ -27,6 +47,7 @@ module.exports = {
     "react/button-has-type": "off",
     "react/require-default-props": "off",
     "react/prop-types": "off",
+
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",

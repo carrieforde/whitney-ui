@@ -1,5 +1,5 @@
+import { Banner, type BannerProps } from "@/components/banner/banner";
 import { render, screen } from "@testing-library/react";
-import { BannerProps, Banner } from "./banner";
 
 const defaultProps = {
   children: "This is a banner",

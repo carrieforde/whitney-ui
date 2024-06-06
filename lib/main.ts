@@ -1,4 +1,3 @@
-export function hello(name?: string) {
-  return `Hello, ${name || 'world'}!`;
-}
-
+// Components
+export { Banner } from "@/components/banner/banner";
+export { Text } from "@/components/text/text";
