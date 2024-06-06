@@ -111,12 +111,12 @@
   --base-font-size: 16px;
   --base-font-weight: 400;
   --base-spacing: 8px;
-  --base-line-height: 1.5;
+  --base-line-height: 1.75;
 
   --border-radius: 4px;
 
-  --font-family-body: var(--font-family-libre-franklin, system-ui);
-  --font-family-monospace: var(--font-family-ibm-plex-mono, monospace);
+  --font-family-body: "Libre Franklin", sans-serif;
+  --font-family-monospace: "IBM Plex Mono", monospace;
 
   --dark-text-color: var(--color-default-main);
   --light-text-color: #fff;
