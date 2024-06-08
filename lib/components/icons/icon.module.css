@@ -1,0 +1,6 @@
+.icon {
+  fill: var(--icon-fill, var(--color-default-main));
+  height: var(--icon-height, 1em);
+  stroke: var(--icon-stroke, transparent);
+  width: var(--icon-width, var(--base-font-size));
+}

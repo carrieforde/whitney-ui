@@ -1,0 +1,51 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  --icon-width: var(--spinner-width, var(--base-font-size));
+  --icon-fill: var(--spinner-color, var(--color-default-main));
+
+  align-items: center;
+  animation: 1s linear 100ms infinite spin;
+  display: inline-flex;
+  font-size: var(--spinner-width, var(--base-font-size));
+}
+
+.small {
+  --spinner-width: var(--base-font-size);
+}
+
+.medium {
+  --spinner-width: var(--spinner-medium-width, 24px);
+}
+
+.large {
+  --spinner-width: var(--spinner-large-width, 36px);
+}
+
+.default {
+  --spinner-color: var(--spinner-default-color, var(--color-default-main));
+}
+
+.primary {
+  --spinner-color: var(--spinner-primary-color, var(--color-primary-main));
+}
+
+.secondary {
+  --spinner-color: var(--spinner-secondary-color, var(--color-secondary-main));
+}
+
+@media (prefers-color-scheme: dark) {
+  .spinner {
+    --spinner-default-color: var(--color-default-200);
+    --spinner-primary-color: var(--color-primary-200);
+    --spinner-secondary-color: var(--color-secondary-300);
+  }
+}
