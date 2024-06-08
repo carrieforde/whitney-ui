@@ -1,0 +1,164 @@
+.button {
+  --button-main: var(--button-default-main, var(--color-default-main));
+  --button-contrast: var(
+    --button-default-contrast,
+    var(--color-default-contrast)
+  );
+  --button-hover: var(--button-default-hover, var(--color-default-600));
+  --button-disabled: var(--button-default-disabled, var(--color-default-300));
+
+  --button-border-radius: var(--border-radius);
+  --button-font-family: var(--font-family-body);
+  --button-font-size: 14px;
+  --button-font-weight: 600;
+  --button-min-width: 100px;
+  --button-padding: 8px 12px;
+
+  --button-spinner-color: var(--button-main);
+
+  align-items: center;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  border-radius: var(--button-border-radius);
+  color: var(--button-main);
+  display: inline-flex;
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  justify-content: center;
+  min-width: var(--button-min-width);
+  padding: var(--button-padding);
+  transition:
+    background-color 0.2s ease-in,
+    color 0.2s ease-in,
+    fill 0.2s ease-in;
+}
+
+.button:hover {
+  color: var(--button-hover);
+}
+
+.button:disabled {
+  color: var(--button-disabled);
+  cursor: not-allowed;
+}
+
+.primary {
+  --button-main: var(--button-primary-main, var(--color-primary-main));
+  --button-contrast: var(
+    --button-primary-contrast,
+    var(--color-primary-contrast)
+  );
+  --button-hover: var(--button-primary-hover, var(--color-primary-600));
+  --button-disabled: var(--button-primary-disabled, var(--color-primary-300));
+  --spinner-color: var(--button-main);
+}
+
+.secondary {
+  --button-main: var(--button-secondary-main, var(--color-secondary-main));
+  --button-contrast: var(
+    --button-secondary-contrast,
+    var(--color-secondary-contrast)
+  );
+  --button-hover: var(--button-secondary-hover, var(--color-secondary-600));
+  --button-disabled: var(
+    --button-secondary-disabled,
+    var(--color-secondary-300)
+  );
+}
+
+.tertiary {
+  --button-main: var(--button-tertiary-main, var(--color-default-main));
+  --button-contrast: var(
+    --button-tertiary-contrast,
+    var(--color-default-contrast)
+  );
+  --button-hover: var(--button-tertiary-hover, var(--color-default-600));
+  --button-disabled: var(--button-tertiary-disabled, var(--color-default-400));
+}
+
+.error {
+  --button-main: var(--button-error-main, var(--color-error-main));
+  --button-contrast: var(--button-error-contrast, var(--color-error-contrast));
+  --button-hover: var(--button-error-hover, var(--color-error-600));
+  --button-disabled: var(--button-error-disabled, var(--color-error-300));
+}
+
+.filled {
+  --button-spinner-color: var(--button-contrast);
+
+  background-color: var(--button-main);
+  color: var(--button-contrast);
+}
+
+.filled:hover {
+  background-color: var(--button-hover);
+  color: var(--button-contrast);
+}
+
+.filled:disabled {
+  background-color: var(--button-disabled);
+  color: var(--button-contrast);
+}
+
+.outline {
+  box-shadow: inset 0 0 0 2px var(--button-main);
+}
+
+.outline:hover {
+  --button-spinner-color: var(--button-contrast);
+
+  background-color: var(--button-main);
+  color: var(--button-contrast);
+}
+
+.outline:disabled {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--button-disabled);
+  color: var(--button-disabled);
+}
+
+.icon {
+  --icon-fill: var(--button-main);
+
+  padding: var(--button-icon-padding, 4px);
+}
+
+.icon,
+.text {
+  min-width: 0;
+}
+
+.icon:hover {
+  --icon-fill: var(--button-hover);
+}
+
+.spinner {
+  --spinner-color: var(--button-spinner-color);
+  --spinner-width: var(--button-font-size);
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    --button-primary-main: var(--color-primary-200);
+    --button-primary-contrast: var(--color-default-dark);
+    --button-primary-hover: var(--color-primary-300);
+    --button-primary-disabled: var(--color-primary-300, #7b93db);
+
+    --button-secondary-main: var(--color-secondary-300);
+    --button-secondary-contrast: var(--color-default-dark);
+    --button-secondary-hover: var(--color-secondary-400);
+    --button-secondary-disabled: var(--color-secondary-400);
+
+    --button-tertiary-main: var(--color-default-200);
+    --button-tertiary-contrast: var(--color-default-dark);
+    --button-tertiary-hover: var(--color-default-300);
+    --button-tertiary-disabled: var(--color-default-300);
+
+    --button-error-main: var(--color-error-200);
+    --button-error-contrast: var(--color-default-dark);
+    --button-error-hover: var(--color-error-300);
+    --button-error-disabled: var(--color-error-300);
+  }
+}

@@ -1,0 +1,104 @@
+import { Meta, Controls, Story, Canvas, ArgTypes } from "@storybook/blocks";
+import * as ButtonStories from "./button.stories";
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Use the controls below to set props for the `Button`. Copy the code to render the component in your UI.
+
+<Canvas of={ButtonStories.Playground} />
+
+## Props
+
+<Controls of={ButtonStories.Playground} />
+
+## Usage notes
+
+Icon buttons **must** include a text "label" to provide context for screen reader users. You can visually hide the label by wrapping the text with the `VisuallyHidden` component.
+
+<Canvas of={ButtonStories.Icon} />
+
+## API
+
+<ArgTypes of={ButtonStories} />
+
+## Style API
+
+Use [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to customize the appearance of buttons to suit your theme. Defaults are shown in code below.
+
+```css
+:root {
+  /* Base button */
+  --button-border-radius: var(--border-radius, 4px);
+
+  --button-font-family: var(--font-family-body, "Libre Franklin", sans-serif);
+  --button-font-size: 14px;
+  --button-font-weight: 600;
+
+  --button-min-width: 100px; /* Does not apply to text & icon buttons */
+
+  --button-padding: 8px 16px;
+
+  /* Variant - Icon */
+  --button-icon-padding: 4px;
+
+  /* Colors - Primary */
+  --button-primary-main: var(--color-primary-main, #3525e6);
+  --button-primary-contrast: var(--color-primary-contrast, #fff);
+  --button-primary-hover: var(--color-primary-600, #4d3df7);
+  --button-primary-disabled: var(--color-primary-300, #7b93db);
+
+  /* Colors - Secondary */
+  --button-secondary-main: var(--color-secondary-main, #27ab83);
+  --button-secondary-contrast: var(--color-secondary-contrast, #fff);
+  --button-secondary-hover: var(--color-secondary-700, #c52707);
+  --button-secondary-disabled: var(--color-secondary-300, #ff9466);
+
+  /* Colors - Tertiary */
+  --button-tertiary-main: var(--color-default-main, #334e68);
+  --button-tertiary-contrast: var(--color-default-contrast, #fff);
+  --button-tertiary-hover: var(--color-default-600, #486581);
+  --button-tertiary-disabled: var(--color-secondary-300, #9aa5b1);
+
+  /* Colors - Error */
+  --button-error-main: var(--color-error-main, #ab091e);
+  --button-error-contrast: var(--color-error-contrast, #fff);
+  --button-error-hover: var(--color-error-600, #cf1124);
+  --button-error-disabled: var(--color-error-300, #f86a6a);
+}
+```
+
+### Custom styling example
+
+<Canvas of={ButtonStories.Styled} />
+
+### Media Queries & Dark Mode
+
+Using CSS Properties is helpful when working with media queries, including dark mode.
+
+```css
+@media (prefers-color-scheme: dark) {
+  .button {
+    --button-primary-main: var(--color-primary-200);
+    --button-primary-contrast: var(--color-default-dark);
+    --button-primary-hover: var(--color-primary-300);
+    --button-primary-disabled: var(--color-primary-300, #7b93db);
+
+    --button-secondary-main: var(--color-secondary-300);
+    --button-secondary-contrast: var(--color-default-dark);
+    --button-secondary-hover: var(--color-secondary-400);
+    --button-secondary-disabled: var(--color-secondary-400);
+
+    --button-tertiary-main: var(--color-default-200);
+    --button-tertiary-contrast: var(--color-default-dark);
+    --button-tertiary-hover: var(--color-default-300);
+    --button-tertiary-disabled: var(--color-default-300);
+
+    --button-error-main: var(--color-error-200);
+    --button-error-contrast: var(--color-default-dark);
+    --button-error-hover: var(--color-error-300);
+    --button-error-disabled: var(--color-error-300);
+  }
+}
+```
