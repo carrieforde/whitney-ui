@@ -1,0 +1,14 @@
+.chevronToggle {
+  --icon-fill: var(--text-color);
+
+  display: inline-block;
+}
+
+.chevronToggle svg {
+  transform: rotateX(0deg);
+  transition: transform 0.2s ease-in;
+}
+
+.toggled svg {
+  transform: rotateX(180deg);
+}

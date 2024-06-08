@@ -1,0 +1,32 @@
+.plusMinus {
+  --plus-minus-size: 12px;
+  --plus-minus-color: currentcolor;
+  --plus-minus-bar-thickness: 2px;
+  --plus-minus-bar-border-radius: var(--border-radius);
+
+  display: block;
+  height: var(--plus-minus-size);
+  position: relative;
+  width: var(--plus-minus-size);
+}
+
+.plusMinusBar {
+  background-color: var(--plus-minus-color);
+  border-radius: var(--plus-minus-bar-border-radius);
+  display: inline-block;
+  height: var(--plus-minus-bar-thickness);
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transition: transform 0.2s ease-in;
+  width: 100%;
+}
+
+.plusMinusVertical {
+  margin: auto;
+  transform: rotate(-90deg);
+}
+
+.plusMinusVerticalToggled {
+  transform: rotate(0deg);
+}
