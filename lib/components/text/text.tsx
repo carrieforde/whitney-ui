@@ -34,7 +34,7 @@ export const Text = forwardRef(function Text(
     s.text,
     s[variant],
     "text",
-    variant && `text-${variant}`,
+    variant && `text--${variant}`,
     className,
   );
 
