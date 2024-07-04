@@ -1,3 +1,8 @@
+import {
+  Theme,
+  theme as defaultTheme,
+} from "@/components/theme-provider/theme";
+import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 import { Banner } from "@/main";
 import { Meta, StoryObj } from "@storybook/react";
 
@@ -52,6 +57,42 @@ export const CustomIcon: Story = {
     icon: "💡",
     children:
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+  },
+};
+
+export const ThemeCustomizations: Story = {
+  render: (args) => {
+    const theme: Theme = {
+      ...defaultTheme,
+      components: {
+        ...defaultTheme.components,
+        banner: {
+          icons: {
+            default: null,
+            info: "ℹ️",
+            error: "🛑",
+            warning: "⚠️",
+            success: "✅",
+          },
+        },
+      },
+    };
+
+    return (
+      <ThemeProvider theme={theme}>
+        <Banner {...args} />
+      </ThemeProvider>
+    );
+  },
+  args: {
+    ...Primary.args,
+    variant: "info",
+    children: "This is a banner",
+  },
+  parameters: {
+    docs: {
+      canvas: { sourceState: "shown" },
+    },
   },
 };
 

@@ -10,8 +10,8 @@
   --banner-padding: 16px 24px;
 
   --banner-icon-color: var(--banner-color);
-  --banner-icon-width: inherit;
-  --banner-icon-line-height: 1.4;
+  --banner-icon-width: var(--base-font-size);
+  --banner-icon-line-height: var(--base-line-height);
 
   --icon-fill: var(--banner-icon-color);
 

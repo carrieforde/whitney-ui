@@ -8,12 +8,6 @@ html {
   font-size: var(--base-font-size);
 }
 
-@media screen and (width >= 600px) {
-  html {
-    font-size: 18px;
-  }
-}
-
 body {
   background-color: var(--body-bg-color);
   color: var(--text-color);

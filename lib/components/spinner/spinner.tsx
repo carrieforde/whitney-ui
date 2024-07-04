@@ -1,9 +1,8 @@
 import * as React from "react";
 
 import cn from "classnames";
-import { useTheme } from "../theme-provider/theme-provider";
-import s from "./spinner.module.css";
-import { IconSpinner } from "@/components/icons/icon-spinner";
+import { useTheme } from "@/components/theme-provider/use-theme";
+import s from "@/components/spinner/spinner.module.css";
 
 type SpinnerSize = "small" | "medium" | "large";
 
@@ -28,9 +27,13 @@ export const Spinner: React.FC<SpinnerProps> = ({
     className,
   );
 
+  const {
+    components: { spinner },
+  } = useTheme();
+
   return (
     <span className={spinnerClasses} title="Loading">
-      <IconSpinner />
+      {spinner.icon}
     </span>
   );
 };

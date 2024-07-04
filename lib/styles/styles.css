@@ -124,3 +124,9 @@
   --body-bg-color: #fff;
   --text-color: var(--dark-text-color);
 }
+
+@media screen and (width >= 600px) {
+  :root {
+    --base-font-size: 18px;
+  }
+}
