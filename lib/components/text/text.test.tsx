@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Text, TextProps } from "./text";
+import { Text, TextProps } from "@/components/text/text";
 
 const defaultProps = {
   children: "The quick brown fox jumped over the lazy dog.",

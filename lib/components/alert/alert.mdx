@@ -1,0 +1,83 @@
+import { Canvas, Meta } from "@storybook/addon-docs";
+import * as AlertStories from "./alert.stories";
+
+<Meta of={AlertStories} />
+
+# useAlert
+
+<Canvas of={AlertStories.Info} />
+
+`useAlert` provides convenience methods for displaying a temporary messages, or alerts, to a user. In order to use `useAlert`, an `AlertProvider` must be added in the DOM tree. Adding the `AlertProvider` at the root of the application is ideal.
+
+```tsx
+export default function App({ children }: React.PropsWithChildren) {
+  return <AlertProvider>{children}</AlertProvider>;
+}
+```
+
+## API
+
+```ts
+type AlertOptions = {
+  icon?: React.ReactNode;
+  dismissable?: boolean;
+  duration?: number;
+};
+
+type UseAlert = {
+  error: (message: React.ReactNode, options?: AlertOptions) => void;
+  info: (message: React.ReactNode, options?: AlertOptions) => void;
+  success: (message: React.ReactNode, options?: AlertOptions) => void;
+  warning: (message: React.ReactNode, options?: AlertOptions) => void;
+};
+```
+
+## Usage
+
+`Alert` is invoked by calling one of the functions returned from `useAlert`.
+
+<Canvas of={AlertStories.Warning} />
+
+## Theme-Level Customizations
+
+The default icons for each `variant` can be set at the theme-level using the `ThemeProvider`, along with the `defaultDurationInMs` which controls the auto-close duration of the `Alert` (in milliseconds).
+
+<Canvas of={AlertStories.ThemeCustomizations} />
+
+## Style API
+
+Use [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to customize the appearance of `Alert` to suit your theme. Defaults are shown in the code below.
+
+```css
+:root {
+  /* Base Alert styles */
+  --alert-color: var(--color-default-contrast, #fff);
+  --alert-bg-color: var(--color-default-main, #323f4b);
+  --alert-font-size: 14px;
+  --alert-max-width: 100%;
+  --alert-min-width: 300px;
+  --alert-width: fit-content;
+
+  --alert-icon-color: var(--alert-color);
+  --alert-icon-width: var(--alert-font-size);
+  --alert-icon-line-height: 1.4;
+
+  --alert-button-color: var(--alert-color);
+
+  /* Error variant */
+  --alert-error-bg-color: var(--color-error-main, #ab091e);
+  --alert-error-color: var(--color-error-contrast, #fff);
+
+  /* Info variant */
+  --alert-info-bg-color: var(--color-info-main, #1992d4);
+  --alert-info-color: var(--color-info-contrast, #fff);
+
+  /* Success variant */
+  --alert-success-bg-color: var(--color-success-main, #07600e);
+  --alert-success-color: var(--color-info-contrast, #fff);
+
+  /* Warning variant */
+  --alert-warning-bg-color: var(--color-warning-main, #f7c948);
+  --alert-warning-color: var(--color-default-main, #323f4b);
+}
+```
